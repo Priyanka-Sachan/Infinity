@@ -166,8 +166,4 @@ public class PoliciesFragment extends Fragment {
         }
         return output.toString();
     }
-
-
-
-
 }

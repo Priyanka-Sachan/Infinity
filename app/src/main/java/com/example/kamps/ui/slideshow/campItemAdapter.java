@@ -18,13 +18,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.kamps.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
 public class campItemAdapter extends RecyclerView.Adapter<campItemAdapter.ViewHolder> {
 
     private Context context;
-    private List<com.example.kamps.ui.slideshow.campItems> campItemList;
+    private ArrayList<campItems> campItemList;
+
     //Interface stuff
     // public void setOnClickListener(com.example.kamps.ui.slideshow.campItemAdapter.onItemclickListener listener){
 //    mListener = listener;
@@ -58,7 +60,7 @@ public class campItemAdapter extends RecyclerView.Adapter<campItemAdapter.ViewHo
 
 
         } else {
-            holder.camp_head.setText("Please Wait");
+            holder.camp_head.setText("Loading...");
         }
     }
 
@@ -81,7 +83,6 @@ public class campItemAdapter extends RecyclerView.Adapter<campItemAdapter.ViewHo
             super(itemView);
             //Set the initialized listener to the one provided
 
-            //          root = itemView.findViewById(R.id.card_camp);
             camp_head = itemView.findViewById(R.id.camp_head);
             camp_desc = itemView.findViewById(R.id.camp_desc);
             camp_image = itemView.findViewById(R.id.camp_image);
@@ -89,12 +90,13 @@ public class campItemAdapter extends RecyclerView.Adapter<campItemAdapter.ViewHo
         }
 
 
-        void setCampItemList(List<campItems> camps) {
-            campItemList = camps;
-         }
 
 
     }
+    public void setCampItemList(ArrayList<campItems> camps) {
+        campItemList = camps;
+    }
+
 
 
 }
