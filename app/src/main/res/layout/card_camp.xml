@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/card_camp"
+    android:layout_margin="8dp"
+    android:orientation="vertical"
+    android:padding="8dp"
+    app:cardCornerRadius="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/camp_head"
+                style="@style/textview_camp"
+                android:text="@string/test" />
+
+            <TextView
+                android:id="@+id/camp_desc"
+                style="@style/textview_camp"
+                android:text="@string/hello"
+                android:textColor="@color/colorAccent" />
+
+        </LinearLayout>
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/camp_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center"
+            android:padding="8dp" />
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>
