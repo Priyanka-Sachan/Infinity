@@ -4,10 +4,10 @@ public class PoliciesClass {
 
     private String policy_name;
     private String policy_description;
-    private int policy_image_id;
+    private String policy_image_id;
     private String visit_us;
 
-    public PoliciesClass(String p_name,String p_description,int p_image_id,String v_us)
+    public PoliciesClass(String p_name,String p_description,String p_image_id,String v_us)
     {
         policy_name=p_name;
         policy_description=p_description;
@@ -21,7 +21,7 @@ public class PoliciesClass {
     public String getPolicy_description()
     {return policy_description;}
 
-    public int getPolicy_image_id()
+    public String getPolicy_image_id()
     {return policy_image_id;}
 
     public String getVisit_us()
@@ -33,7 +33,7 @@ public class PoliciesClass {
     public void setPolicy_description(String p_description)
     {policy_description=p_description;}
 
-    public void setPolicy_image_id(int p_image_id)
+    public void setPolicy_image_id(String p_image_id)
     {policy_image_id=p_image_id;}
 
     public void setVisit_us(String v_us)
