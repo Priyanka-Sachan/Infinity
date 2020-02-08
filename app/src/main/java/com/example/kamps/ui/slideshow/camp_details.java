@@ -18,5 +18,8 @@ public class camp_details extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_camp_details, container, false);
+
+
+
     }
 }

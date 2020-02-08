@@ -26,7 +26,7 @@ import java.util.List;
 
 public class SlideshowFragment extends Fragment{
 
-    View root;
+
     public SlideshowFragment() {
 
     }
@@ -39,7 +39,7 @@ public class SlideshowFragment extends Fragment{
 
 
 
-    root = inflater.inflate(R.layout.fragment_slideshow, container, false);
+   View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
 
         RecyclerView recycler_camp = root.findViewById(R.id.camp_recycler);
         recycler_camp.setLayoutManager(new GridLayoutManager(getContext(), 1));
@@ -58,7 +58,7 @@ public class SlideshowFragment extends Fragment{
         campItemList.add(new campItems("Free Eyes Checkup","Eye CheckUp to be held on 24rth Feb","https://i.imgur.com/fStmMft.png"));
         campItemList.add(new campItems("Polio Vaccination Camp","Polio Vaccinations","https://i.imgur.com/fStmMft.png"));
 
-       // recycler_camp_adapter.();
+       recycler_camp_adapter.setCampItemList(campItemList);
 
 
 
