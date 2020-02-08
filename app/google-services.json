@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "621329477457",
+    "firebase_url": "https://kamps-305d3.firebaseio.com",
+    "project_id": "kamps-305d3",
+    "storage_bucket": "kamps-305d3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:621329477457:android:21ae0f8352c7bcf7aded70",
+        "android_client_info": {
+          "package_name": "com.example.kamps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "621329477457-lapife4e7k11pok2glirisa9viqcj0tf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCm6OBSZTEEz76MUxhkiv0qQvgFbwZ4Y0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "621329477457-lapife4e7k11pok2glirisa9viqcj0tf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
