@@ -25,7 +25,7 @@ import java.util.List;
 public class campItemAdapter extends RecyclerView.Adapter<campItemAdapter.ViewHolder> {
 
     private Context context;
-    private ArrayList<campItems> campItemList;
+    private List<campItems> campItems;
 
     //Interface stuff
     // public void setOnClickListener(com.example.kamps.ui.slideshow.campItemAdapter.onItemclickListener listener){
@@ -33,8 +33,9 @@ public class campItemAdapter extends RecyclerView.Adapter<campItemAdapter.ViewHo
 //    }
 
 
-    public campItemAdapter(Context context) {
+    public campItemAdapter(Context context,List<campItems> campItems ) {
         this.context = context;
+        this.campItems = campItems;
     }
 
     @NonNull
@@ -45,18 +46,26 @@ public class campItemAdapter extends RecyclerView.Adapter<campItemAdapter.ViewHo
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        if (campItemList != null) {
-            final com.example.kamps.ui.slideshow.campItems current = campItemList.get(position);
+        if (campItems != null) {
 
+            com.example.kamps.ui.slideshow.campItems current = campItems.get(position);
             holder.camp_head.setText(current.getCamp_head());
             holder.camp_desc.setText(current.getCamp_desc());
-
             Glide.with(context)
                     .load(current.getCamp_image())
                     .thumbnail(Glide.with(context).load(R.drawable.inf))
                     .into(holder.camp_image);
+
+
+//            holder.camp_head.setText(current.getCamp_head());
+//            holder.camp_desc.setText(current.getCamp_desc());
+//
+//            Glide.with(context)
+//                    .load(current.getCamp_image())
+//                    .thumbnail(Glide.with(context).load(R.drawable.inf))
+//                    .into(holder.camp_image);
 
 
         } else {
@@ -66,8 +75,8 @@ public class campItemAdapter extends RecyclerView.Adapter<campItemAdapter.ViewHo
 
     @Override
     public int getItemCount() {
-        if (campItemList != null)
-            return campItemList.size();
+        if (campItems != null)
+            return campItems.size();
         else return 0;
     }
 
@@ -94,7 +103,7 @@ public class campItemAdapter extends RecyclerView.Adapter<campItemAdapter.ViewHo
 
     }
     public void setCampItemList(ArrayList<campItems> camps) {
-        campItemList = camps;
+        campItems = camps;
     }
 
 
