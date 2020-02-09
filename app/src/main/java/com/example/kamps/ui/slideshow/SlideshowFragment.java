@@ -32,6 +32,7 @@ public class SlideshowFragment extends Fragment{
     }
 
     private campItemAdapter recycler_camp_adapter;
+    RecyclerView recycler_camp;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -41,8 +42,9 @@ public class SlideshowFragment extends Fragment{
 
    View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
 
-        RecyclerView recycler_camp = root.findViewById(R.id.camp_recycler);
+         recycler_camp = root.findViewById(R.id.camp_recycler);
         recycler_camp.setLayoutManager(new GridLayoutManager(getContext(), 1));
+       // adapter = new SponsorsAdapter(getContext());
 
         recycler_camp_adapter = new campItemAdapter(getContext());
         recycler_camp.setAdapter(recycler_camp_adapter);
@@ -53,12 +55,13 @@ public class SlideshowFragment extends Fragment{
     }
 
     private void addData() {
-    List<campItems> campItemList = new ArrayList<>();
+    ArrayList<campItems> campItemList = new ArrayList<campItems>();
         campItemList.add(new campItems("Blood Donation","Blood Donation to be held in the state on 21st Feb","https://i.imgur.com/fStmMft.png"));
         campItemList.add(new campItems("Free Eyes Checkup","Eye CheckUp to be held on 24rth Feb","https://i.imgur.com/fStmMft.png"));
         campItemList.add(new campItems("Polio Vaccination Camp","Polio Vaccinations","https://i.imgur.com/fStmMft.png"));
 
-     //  recycler_camp_adapter.setCampItemList(campItemList);
+
+       recycler_camp_adapter.setCampItemList(campItemList);
 
 
 
