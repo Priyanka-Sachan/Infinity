@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    android:orientation="vertical"
+    android:layout_margin="8dp"
+    tools:context=".ui.slideshow.add_camp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/textview_camp"
+        android:text="Add an event"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Name of the event"
+        android:id="@+id/event_name"
+        android:layout_margin="8dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Official Email"
+        android:id="@+id/event_email"
+        android:layout_margin="8dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Phone Number"
+        android:id="@+id/event_phone"
+        android:layout_margin="8dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Type of event"
+        android:id="@+id/event_type"
+        android:layout_margin="8dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Venue"
+        android:id="@+id/event_venue"
+        android:layout_margin="8dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Date and Time"
+        android:id="@+id/event_date_time"
+        android:layout_margin="8dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Title Description"
+        android:id="@+id/event_desc"
+        android:layout_margin="8dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Type of event"
+        android:id="@+id/event_tpe"
+        android:layout_margin="8dp"/>
+
+
+
+
+</LinearLayout>
+
+</ScrollView>

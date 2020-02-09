@@ -2,9 +2,12 @@ package com.example.kamps.ui.slideshow;
 
 public class campItems {
 
+
+
     private String camp_head;
     private String camp_desc;
     private String camp_image;
+     private String camp_body;
 
 
     //Constructor
@@ -12,10 +15,11 @@ public class campItems {
 
     }
 
-    public campItems(String camp_head, String camp_desc, String camp_image) {
+    public campItems(String camp_head, String camp_desc, String camp_image, String camp_body) {
         this.camp_head = camp_head;
         this.camp_desc = camp_desc;
         this.camp_image = camp_image;
+        this.camp_body = camp_body;
     }
 
 
@@ -43,5 +47,13 @@ public class campItems {
 
     public void setCamp_image(String camp_image) {
         this.camp_image = camp_image;
+    }
+
+    public String getCamp_body() {
+        return camp_body;
+    }
+
+    public void setCamp_body(String camp_body) {
+        this.camp_body = camp_body;
     }
 }

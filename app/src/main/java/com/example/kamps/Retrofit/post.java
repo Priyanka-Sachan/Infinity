@@ -2,10 +2,11 @@ package com.example.kamps.Retrofit;
 
 public class post {
 
-private String camp_name;
-private  String camp_desc;
-private  String camp_body;
-private String camp_image;
+
+    private String camp_name;
+    private String camp_desc;
+    private String camp_body;
+    private String camp_image;
 
     public post(String camp_name, String camp_desc, String camp_body, String camp_image) {
         this.camp_name = camp_name;
