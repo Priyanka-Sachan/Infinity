@@ -12,9 +12,9 @@
             android:id="@+id/nav_camp"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/events_near_me" />
-        <iteSm
-            android:id="@+id/nav_tools"
-            android:icon="@drawable/ic_menu_manage"
+        <item
+            android:id="@+id/nav_policies"
+            android:icon="@drawable/ic_policies"
             android:title="@string/schemes_for_you" />
 
         <item
