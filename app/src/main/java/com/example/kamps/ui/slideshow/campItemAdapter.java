@@ -38,6 +38,10 @@ public class campItemAdapter extends RecyclerView.Adapter<campItemAdapter.ViewHo
         this.campItems = campItems;
     }
 
+    public campItemAdapter(Context context ) {
+        this.context = context;
+    }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
