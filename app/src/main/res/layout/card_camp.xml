@@ -1,45 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/card_camp"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_margin="8dp"
+app:cardBackgroundColor="#ffffff"
+app:cardCornerRadius="8dp"
+app:strokeColor="#ffffff"
+app:strokeWidth="1dp">
+
+
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/card_camp"
-    android:layout_margin="8dp"
-    android:orientation="vertical"
-    android:padding="8dp"
-    app:cardCornerRadius="10dp">
+    android:orientation="vertical">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/camp_head"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:gravity="center_vertical"
+        android:text=""
+        android:textColor="#000000"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        tools:text="Policy Name"
+        android:layout_gravity="center"/>
 
-        <LinearLayout
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#ffffff" />
+
+    <TextView
+        android:id="@+id/camp_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:layout_gravity="center_horizontal"
+        tools:text="Sample text" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/camp_image"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:scaleType="centerCrop"
+        android:padding="8dp"
+        tools:src="@drawable/abc_vector_test" />
+
+
+    <TextView
+        android:id="@+id/camp_body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:text="Click to know more about the event and join us in this fest of Humanity."
+        android:layout_gravity="center_horizontal"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        tools:text="Sample text" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:padding="8dp">
+
+        <Button
+            android:id="@+id/visit_us_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:background="@color/colorPrimary"
+            android:gravity="center_vertical"
+            android:text="@string/visit_us"
+            android:layout_margin="8dp"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_marginRight="10dp"/>
 
-            <TextView
-                android:id="@+id/camp_head"
-                style="@style/textview_camp"
-                android:text="@string/test" />
+        <Button
+            android:id="@+id/share_us_button"
+            android:layout_margin="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/design_default_color_surface"
+            android:text="SHARE US"
+            android:gravity="center_vertical"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
 
-            <TextView
-                android:id="@+id/camp_desc"
-                style="@style/textview_camp"
-                android:text="@string/hello"
-                android:textColor="@color/colorAccent" />
-
-        </LinearLayout>
+            android:layout_marginLeft="10dp"/>
 
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/camp_image"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_alignParentEnd="true"
-            android:layout_gravity="center"
-            android:padding="8dp" />
-    </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>
 
 </com.google.android.material.card.MaterialCardView>
