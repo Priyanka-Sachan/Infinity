@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         mAppBarConfiguration = new AppBarConfiguration.Builder(
 
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_camp,
-                R.id.nav_policies, R.id.nav_share, R.id.nav_send,R.id.nav_login)
+                R.id.nav_policies, R.id.nav_posts, R.id.nav_send,R.id.nav_login)
 
                 .setDrawerLayout(drawer)
                 .build();

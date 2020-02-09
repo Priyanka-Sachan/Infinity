@@ -26,7 +26,8 @@
             android:textColor="#000000"
             android:textSize="30dp"
             android:textStyle="bold"
-            tools:text="Policy Name" />
+            tools:text="Policy Name"
+            android:layout_gravity="center"/>
 
         <View
             android:layout_width="match_parent"
@@ -55,6 +56,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="horizontal"
+            android:layout_gravity="center"
             android:padding="8dp">
 
             <Button
@@ -66,7 +68,11 @@
                 android:text="VISIT US"
                 android:textColor="#000000"
                 android:textSize="20sp"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_marginRight="10dp"/>
 
             <Button
                 android:id="@+id/share_us_button"
@@ -77,7 +83,12 @@
                 android:gravity="center_vertical"
                 android:textColor="#000000"
                 android:textSize="20sp"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:paddingRight="20dp"
+                android:paddingLeft="20dp"
+
+                android:layout_marginLeft="10dp"/>
 
 
         </LinearLayout>

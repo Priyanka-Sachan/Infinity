@@ -1,4 +1,4 @@
-package com.example.kamps.ui.policies;
+package com.example.kamps.ui.posts;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -19,6 +19,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kamps.R;
+import com.example.kamps.ui.policies.PoliciesAdapter;
+import com.example.kamps.ui.policies.PoliciesClass;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -35,16 +37,16 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PoliciesFragment extends Fragment {
+public class PostsFragment extends Fragment {
     private RecyclerView recyclerView;
     private ArrayList<PoliciesClass>PoliceItemArray;
     private PoliciesAdapter adapter;
     View view;
 
-    public PoliciesFragment() {
+    public PostsFragment() {
     }
 
-    public static final String LOG_TAG =PoliciesFragment.class.getSimpleName();
+    public static final String LOG_TAG =PostsFragment.class.getSimpleName();
     private static final String REQUEST_URL = "https://api.myjson.com/bins/y2zcg";
 
 
@@ -65,13 +67,13 @@ public class PoliciesFragment extends Fragment {
     public void UpdateUI(ArrayList<PoliciesClass> PolicyItems)
     {
 
-       // adapter = new PoliciesAdapter(getContext());
+        // adapter = new PoliciesAdapter(getContext());
         if(PolicyItems!=null)
             adapter=new PoliciesAdapter(getContext(),PolicyItems);
         recyclerView.setAdapter(adapter);
 
         //adapter.setPoliciesAdapter(PolicyItems);
-    Log.e("policy",PolicyItems.get(0).getPolicy_description()+" "+PolicyItems.get(0).getPolicy_image_id()+" "+PolicyItems.get(0).getPolicy_name()+" "+PolicyItems.get(0).getVisit_us());}
+        Log.e("policy",PolicyItems.get(0).getPolicy_description()+" "+PolicyItems.get(0).getPolicy_image_id()+" "+PolicyItems.get(0).getPolicy_name()+" "+PolicyItems.get(0).getVisit_us());}
 
 
     private class ReportAsyncTask extends AsyncTask<URL, Void, ArrayList<PoliciesClass>> {
@@ -85,20 +87,20 @@ public class PoliciesFragment extends Fragment {
                 URL URL_url=createUrl(REQUEST_URL);
                 String url_string = makeHttpRequest(URL_url);
                 JSONObject baseJson =new JSONObject(url_string);
-                JSONArray policyArray = baseJson.getJSONArray("policies");
+                JSONArray policyArray = baseJson.getJSONArray("posts");
                 for(int i=0;i<policyArray.length();i++)
                 { JSONObject currentpolicy = policyArray.getJSONObject(i);
-                    String name =currentpolicy.getString("policy_name");
-                    String description =currentpolicy.getString("policy_description");
-                    String visit =currentpolicy.getString("policy_visit_us");
-                    String image_id =currentpolicy.getString("policy_image");
+                    String name =currentpolicy.getString("post_name");
+                    String description =currentpolicy.getString("post_description");
+                    String visit =currentpolicy.getString("post_visit_us");
+                    String image_id =currentpolicy.getString("post_image");
                     //Log.e("Policy",name+" "+description+" "+visit+" "+image_id);
                     PolicyItems.add(new PoliciesClass(name,description,image_id,visit));
                 }
 
             } catch (JSONException | IOException e) {
 
-                Log.e("PoliciesFragment", "Problem parsing the earthquake JSON results", e);
+                Log.e("PostsFragment", "Problem parsing the earthquake JSON results", e);
             }
             return PolicyItems;
         }
@@ -106,7 +108,7 @@ public class PoliciesFragment extends Fragment {
         @Override
         protected void onPostExecute(ArrayList<PoliciesClass> PolicyItems) {
             if(PolicyItems!=null){
-            UpdateUI(PolicyItems);}
+                UpdateUI(PolicyItems);}
 
         }
 
