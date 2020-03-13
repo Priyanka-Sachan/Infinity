@@ -7,7 +7,7 @@ public class campItems {
     private String camp_head;
     private String camp_desc;
     private String camp_image;
-     private String camp_body;
+    private String camp_body;
 
 
     //Constructor

@@ -80,6 +80,8 @@ public class SlideshowFragment extends Fragment {
             if (CampItems != null)
                 adapter = new campItemAdapter(getContext(), CampItems);
             recyclerView.setAdapter(adapter);
+
+
         }
 
 

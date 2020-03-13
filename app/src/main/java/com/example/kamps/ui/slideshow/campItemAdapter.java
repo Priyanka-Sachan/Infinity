@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -46,8 +47,26 @@ public class campItemAdapter extends RecyclerView.Adapter<campItemAdapter.ViewHo
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_camp, parent, false);
+        final TextView campHead=view.findViewById(R.id.camp_head);
+        final TextView campDesc=view.findViewById(R.id.camp_desc);
+        final TextView campDetails=view.findViewById(R.id.camp_body);
+        Button shareButton=view.findViewById(R.id.share_us_button);
+        shareButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT,campHead.getText()+"\n\nVenue:"+campDesc.getText()+"\n\n"+campDetails.getText()+"\n\nFor more information,visit us at: ");
+                sendIntent.setType("text/plain");
+                context.startActivity(sendIntent);
+            }
+        });
         return new ViewHolder(view);
     }
+
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
@@ -57,6 +76,7 @@ public class campItemAdapter extends RecyclerView.Adapter<campItemAdapter.ViewHo
             com.example.kamps.ui.slideshow.campItems current = campItems.get(position);
             holder.camp_head.setText(current.getCamp_head());
             holder.camp_desc.setText(current.getCamp_desc());
+            holder.camp_body.setText(current.getCamp_body());
             Glide.with(context)
                     .load(current.getCamp_image())
                     .thumbnail(Glide.with(context).load(R.drawable.inf))
@@ -91,6 +111,7 @@ public class campItemAdapter extends RecyclerView.Adapter<campItemAdapter.ViewHo
         TextView camp_head;
         ImageView camp_image;
         TextView camp_desc;
+        TextView camp_body;
 
         ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -99,12 +120,9 @@ public class campItemAdapter extends RecyclerView.Adapter<campItemAdapter.ViewHo
             camp_head = itemView.findViewById(R.id.camp_head);
             camp_desc = itemView.findViewById(R.id.camp_desc);
             camp_image = itemView.findViewById(R.id.camp_image);
+            camp_body=itemView.findViewById(R.id.camp_body);
 
         }
-
-
-
-
     }
     public void setCampItemList(ArrayList<campItems> camps) {
         campItems = camps;
