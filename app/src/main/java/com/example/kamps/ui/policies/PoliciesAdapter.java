@@ -2,10 +2,12 @@ package com.example.kamps.ui.policies;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -37,8 +39,24 @@ public class PoliciesAdapter extends RecyclerView.Adapter<PoliciesAdapter.ViewHo
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v=LayoutInflater.from(parent.getContext()).inflate(R.layout.card_policies,parent,false);
-        return (new ViewHolder(v));
+        View view=LayoutInflater.from(parent.getContext()).inflate(R.layout.card_policies,parent,false);
+        final TextView policyName=view.findViewById(R.id.policy_name_view);
+        final TextView policyDescription=view.findViewById(R.id.policy_description_view);
+        Button shareButton=view.findViewById(R.id.share_us_button);
+        shareButton.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT,policyName.getText()+"\n\n"+policyDescription.getText()+"\n\nFor more information,visit us at: ");
+                sendIntent.setType("text/plain");
+                context.startActivity(sendIntent);
+            }
+        });
+        return (new ViewHolder(view));
     }
 
     @Override
