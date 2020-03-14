@@ -23,11 +23,6 @@
         android:label="@string/menu_gallery"
         tools:layout="@layout/fragment_gallery" />
 
-    <activity
-        android:id="@+id/nav_login"
-        android:label="Login"
-        android:name="com.example.kamps.LoginActivity"/>
-
     <fragment
         android:id="@+id/nav_camp"
         android:name="com.example.kamps.ui.slideshow.SlideshowFragment"
@@ -37,6 +32,11 @@
             android:id="@+id/action_nav_camp_to_camp_details"
             app:destination="@id/camp_details" />
     </fragment>
+    <fragment
+        android:id="@+id/camp_details"
+        android:name="com.example.kamps.ui.slideshow.camp_details"
+        android:label="fragment_camp_details"
+        tools:layout="@layout/fragment_camp_details" />
 
     <fragment
         android:id="@+id/nav_policies"
@@ -50,14 +50,10 @@
         android:label="Posts"
         tools:layout="@layout/fragment_posts" />
 
-    <fragment
-        android:id="@+id/nav_send"
-        android:name="com.example.kamps.ui.RegisterNGO.LoginFragment"
-        android:label="@string/menu_send"
-        tools:layout="@layout/fragment_login" />
-    <fragment
-        android:id="@+id/camp_details"
-        android:name="com.example.kamps.ui.slideshow.camp_details"
-        android:label="fragment_camp_details"
-        tools:layout="@layout/fragment_camp_details" />
+    <activity
+        android:id="@+id/nav_login"
+        android:name="com.example.kamps.LoginActivity"
+        android:label="Login"
+        tools:layout="@layout/activity_log_cover"/>
+
 </navigation>

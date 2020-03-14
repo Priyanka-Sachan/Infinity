@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -17,13 +16,10 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.kamps.R;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -71,7 +67,7 @@ public class PoliciesFragment extends Fragment {
         recyclerView.setAdapter(adapter);
 
         //adapter.setPoliciesAdapter(PolicyItems);
-    Log.e("policy",PolicyItems.get(0).getPolicy_description()+" "+PolicyItems.get(0).getPolicy_image_id()+" "+PolicyItems.get(0).getPolicy_name()+" "+PolicyItems.get(0).getVisit_us());}
+        Log.e("policy",PolicyItems.get(0).getPolicy_description()+" "+PolicyItems.get(0).getPolicy_image_id()+" "+PolicyItems.get(0).getPolicy_name()+" "+PolicyItems.get(0).getVisit_us());}
 
 
     private class ReportAsyncTask extends AsyncTask<URL, Void, ArrayList<PoliciesClass>> {
@@ -98,7 +94,7 @@ public class PoliciesFragment extends Fragment {
 
             } catch (JSONException | IOException e) {
 
-                Log.e("PoliciesFragment", "Problem parsing the earthquake JSON results", e);
+                Log.e("PoliciesFragment", "Problem parsing the policies JSON results", e);
             }
             return PolicyItems;
         }
