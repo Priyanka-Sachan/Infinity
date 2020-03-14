@@ -51,7 +51,23 @@ public class campItemAdapter extends RecyclerView.Adapter<campItemAdapter.ViewHo
         final TextView campHead=view.findViewById(R.id.camp_head);
         final TextView campDesc=view.findViewById(R.id.camp_desc);
         final TextView campDetails=view.findViewById(R.id.camp_body);
+        final TextView campVisit=view.findViewById(R.id.visit_us);
         Button shareButton=view.findViewById(R.id.share_us_button);
+        Button visitButton=view.findViewById(R.id.visit_us_button);
+        visitButton.setOnClickListener(
+                new View.OnClickListener()
+                {
+                    @Override
+                    public void onClick(View v)
+                    {
+                        String url=(String) campVisit.getText();
+                        Intent sendIntent = new Intent();
+                        sendIntent.setAction(Intent.ACTION_VIEW);
+                        sendIntent.setData(Uri.parse(url));
+                        context.startActivity(sendIntent);
+                    }
+                }
+        );
         shareButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -60,7 +76,7 @@ public class campItemAdapter extends RecyclerView.Adapter<campItemAdapter.ViewHo
 
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
-                sendIntent.putExtra(Intent.EXTRA_TEXT,campHead.getText()+"\n\nVenue:"+campDesc.getText()+"\n\n"+campDetails.getText()+"\n\nFor more information,visit us at: ");
+                sendIntent.putExtra(Intent.EXTRA_TEXT,campHead.getText()+"\n\nVenue:"+campDesc.getText()+"\n\n"+campDetails.getText()+"\n\nFor more information,visit us at: "+campVisit.getText());
                 sendIntent.setType("text/plain");
                 context.startActivity(sendIntent);
             }
@@ -78,6 +94,7 @@ public class campItemAdapter extends RecyclerView.Adapter<campItemAdapter.ViewHo
             holder.camp_head.setText(current.getCamp_head());
             holder.camp_desc.setText(current.getCamp_desc());
             holder.camp_body.setText(current.getCamp_body());
+            holder.visit.setText(current.getvisit_us());
             Glide.with(context)
                     .load(current.getCamp_image())
                     .thumbnail(Glide.with(context).load(R.drawable.inf))
@@ -113,6 +130,7 @@ public class campItemAdapter extends RecyclerView.Adapter<campItemAdapter.ViewHo
         ImageView camp_image;
         TextView camp_desc;
         TextView camp_body;
+        TextView visit;
 
         ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -122,6 +140,8 @@ public class campItemAdapter extends RecyclerView.Adapter<campItemAdapter.ViewHo
             camp_desc = itemView.findViewById(R.id.camp_desc);
             camp_image = itemView.findViewById(R.id.camp_image);
             camp_body=itemView.findViewById(R.id.camp_body);
+            visit=itemView.findViewById(R.id.visit_us);
+
 
         }
     }

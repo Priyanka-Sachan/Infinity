@@ -47,7 +47,7 @@ public class PostsFragment extends Fragment {
     }
 
     public static final String LOG_TAG =PostsFragment.class.getSimpleName();
-    private static final String REQUEST_URL = "https://api.myjson.com/bins/18xxf4";
+    private static final String REQUEST_URL = "https://api.myjson.com/bins/lhhi6";
 
 
     @Override

@@ -8,6 +8,7 @@ public class campItems {
     private String camp_desc;
     private String camp_image;
     private String camp_body;
+    private String visit_us;
 
 
     //Constructor
@@ -15,11 +16,12 @@ public class campItems {
 
     }
 
-    public campItems(String camp_head, String camp_desc, String camp_image, String camp_body) {
+    public campItems(String camp_head, String camp_desc, String camp_image, String camp_body,String visit_us) {
         this.camp_head = camp_head;
         this.camp_desc = camp_desc;
         this.camp_image = camp_image;
         this.camp_body = camp_body;
+        this.visit_us=visit_us;
     }
 
 
@@ -27,7 +29,6 @@ public class campItems {
     public String getCamp_head() {
         return camp_head;
     }
-
 
     public void setCamp_head(String camp_head) {
         this.camp_head = camp_head;
@@ -56,4 +57,10 @@ public class campItems {
     public void setCamp_body(String camp_body) {
         this.camp_body = camp_body;
     }
+
+    public String getvisit_us() {
+        return visit_us;
+    }
+
+    public void setVisit_us(String visit_us) { this.visit_us = visit_us; }
 }
