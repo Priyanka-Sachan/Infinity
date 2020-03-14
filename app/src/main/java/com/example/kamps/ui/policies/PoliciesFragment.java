@@ -90,10 +90,10 @@ public class PoliciesFragment extends Fragment {
                 { JSONObject currentpolicy = policyArray.getJSONObject(i);
                     String name =currentpolicy.getString("policy_name");
                     String description =currentpolicy.getString("policy_description");
-                   // String visit =currentpolicy.getString("policy_visit_us");
+                    String visit =currentpolicy.getString("policy_visit_us");
                     String image_id =currentpolicy.getString("policy_image");
                     //Log.e("Policy",name+" "+description+" "+visit+" "+image_id);
-                    PolicyItems.add(new PoliciesClass(name,description,image_id));
+                    PolicyItems.add(new PoliciesClass(name,description,visit,image_id));
                 }
 
             } catch (JSONException | IOException e) {

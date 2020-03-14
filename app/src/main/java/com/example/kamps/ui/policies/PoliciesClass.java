@@ -5,12 +5,13 @@ public class PoliciesClass {
     private String policy_name;
     private String policy_description;
     private String policy_image_id;
-    private String visit_us="VISIT US";
+    private String visit_us;
 
-    public PoliciesClass(String p_name,String p_description,String p_image_id)
+    public PoliciesClass(String p_name,String p_description,String p_visit,String p_image_id)
     {
         policy_name=p_name;
         policy_description=p_description;
+        visit_us=p_visit;
         policy_image_id=p_image_id;
     }
 
