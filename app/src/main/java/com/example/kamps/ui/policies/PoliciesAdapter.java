@@ -3,6 +3,7 @@ package com.example.kamps.ui.policies;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -42,7 +44,23 @@ public class PoliciesAdapter extends RecyclerView.Adapter<PoliciesAdapter.ViewHo
         View view=LayoutInflater.from(parent.getContext()).inflate(R.layout.card_policies,parent,false);
         final TextView policyName=view.findViewById(R.id.policy_name_view);
         final TextView policyDescription=view.findViewById(R.id.policy_description_view);
+        final TextView policyVisit=view.findViewById(R.id.visit_us);
         Button shareButton=view.findViewById(R.id.share_us_button);
+        Button visitButton=view.findViewById(R.id.visit_us_button);
+        visitButton.setOnClickListener(
+                new View.OnClickListener()
+                {
+                    @Override
+                    public void onClick(View v)
+                    {
+                        String url=(String) policyVisit.getText();
+                        Intent sendIntent = new Intent();
+                        sendIntent.setAction(Intent.ACTION_VIEW);
+                        sendIntent.setData(Uri.parse(url));
+                        context.startActivity(sendIntent);
+                    }
+                }
+        );
         shareButton.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -90,7 +108,7 @@ public class PoliciesAdapter extends RecyclerView.Adapter<PoliciesAdapter.ViewHo
             super(itemView);
             p_name=(TextView)itemView.findViewById(R.id.policy_name_view);
             p_description=(TextView)itemView.findViewById(R.id.policy_description_view);
-            v_us=(TextView)itemView.findViewById(R.id.visit_us_button);
+            v_us=(TextView)itemView.findViewById(R.id.visit_us);
             p_image_id=(ImageView) itemView.findViewById(R.id.policy_image_view);
         }
     }

@@ -58,7 +58,7 @@ public class SlideshowFragment extends Fragment {
         }
 
         public static final String LOG_TAG = com.example.kamps.ui.slideshow.SlideshowFragment.class.getSimpleName();
-        private static final String REQUEST_URL = "https://api.myjson.com/bins/18xxf4";
+        private static final String REQUEST_URL = "https://api.myjson.com/bins/lhhi6";
 
 
         @Override
@@ -104,8 +104,9 @@ public class SlideshowFragment extends Fragment {
                         String description =currentcamp.getString("camp_desc");
                         String image =currentcamp.getString("camp_image");
                         String body =currentcamp.getString("camp_body");
+                        String visit=currentcamp.getString("camp_visit_us");
                         //Log.e("Policy",name+" "+description+" "+visit+" "+image_id);
-                        CampItems.add(new campItems(name,description,image,body));
+                        CampItems.add(new campItems(name,description,image,body,visit));
                     }
 
                 } catch (JSONException | IOException e) {

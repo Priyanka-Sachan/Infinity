@@ -47,7 +47,7 @@ public class PostsFragment extends Fragment {
     }
 
     public static final String LOG_TAG =PostsFragment.class.getSimpleName();
-    private static final String REQUEST_URL = "https://api.myjson.com/bins/18xxf4";
+    private static final String REQUEST_URL = "https://api.myjson.com/bins/lhhi6";
 
 
     @Override
@@ -92,10 +92,10 @@ public class PostsFragment extends Fragment {
                 { JSONObject currentpolicy = policyArray.getJSONObject(i);
                     String name =currentpolicy.getString("post_name");
                     String description =currentpolicy.getString("post_description");
-                   // String visit =currentpolicy.getString("post_visit_us");
+                   String visit =currentpolicy.getString("post_visit_us");
                     String image_id =currentpolicy.getString("post_image");
                     //Log.e("Policy",name+" "+description+" "+visit+" "+image_id);
-                    PolicyItems.add(new PoliciesClass(name,description,image_id));
+                    PolicyItems.add(new PoliciesClass(name,description,visit,image_id));
                 }
 
             } catch (JSONException | IOException e) {
