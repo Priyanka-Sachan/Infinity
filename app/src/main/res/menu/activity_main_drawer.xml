@@ -4,6 +4,7 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
+
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_menu_camera"
@@ -16,13 +17,12 @@
 
             android:id="@+id/nav_policies"
             android:icon="@drawable/ic_policies"
-
             android:title="@string/schemes_for_you" />
 
         <item
-            android:id="@+id/nav_login"
-            android:icon="@drawable/ic_policies"
-            android:title="Join us"/>
+            android:id="@+id/nav_posts"
+            android:icon="@drawable/ic_menu_share"
+            android:title="Posts" />
 
         <item
             android:id="@+id/nav_gallery"
@@ -30,20 +30,15 @@
             android:title="@string/menu_gallery" />
 
         <item
+            android:id="@+id/nav_login"
+            android:icon="@drawable/ic_policies"
+            android:title="Join Us" />
+
+        <item
             android:id="@+id/contact"
             android:icon="@drawable/ic_menu_gallery"
             android:title="@string/menu_contact" />
 
-        <item
-            android:id="@+id/nav_posts"
-            android:icon="@drawable/ic_menu_share"
-            android:title="Posts" />
-        <item
-            android:id="@+id/nav_send"
-            android:icon="@drawable/ic_menu_send"
-            android:title="@string/menu_send" />
-
     </group>
-
 
 </menu>
